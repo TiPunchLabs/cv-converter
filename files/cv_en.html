@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - First LAST</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #333;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            background: #fff;
+        }
+        .header {
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3b82f6;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #1e40af;
+            font-size: 28pt;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            color: #3b82f6;
+            font-size: 14pt;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            font-size: 10pt;
+            color: #666;
+        }
+        .contact-info a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: #1e40af;
+            font-size: 14pt;
+            font-weight: bold;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .profile-text {
+            text-align: justify;
+        }
+        .skills-grid {
+            display: grid;
+            gap: 8px;
+        }
+        .skill-item {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .skill-category {
+            color: #1e40af;
+            font-weight: bold;
+            min-width: 150px;
+        }
+        .skill-list {
+            flex: 1;
+        }
+        .cert-list {
+            list-style: none;
+        }
+        .cert-list li {
+            padding: 3px 0;
+        }
+        .experience-item, .education-item {
+            margin-bottom: 15px;
+        }
+        .job-title {
+            color: #1e40af;
+            font-weight: bold;
+            font-size: 12pt;
+        }
+        .company-name {
+            font-style: italic;
+        }
+        .date-range {
+            color: #9ca3af;
+            font-size: 9pt;
+        }
+        .responsibilities {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        .responsibilities li {
+            margin-bottom: 3px;
+        }
+        .tech-stack {
+            font-size: 9pt;
+            font-style: italic;
+            color: #3b82f6;
+            margin-top: 5px;
+            margin-left: 15px;
+        }
+        .projects-list {
+            font-size: 10pt;
+        }
+        .projects-list a {
+            color: #3b82f6;
+        }
+        .github-repos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .repo-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px;
+            border-left: 3px solid #3b82f6;
+        }
+        .repo-card a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+        .repo-card a:hover {
+            text-decoration: underline;
+        }
+        .repo-description {
+            font-size: 9pt;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .repo-tech {
+            display: flex;
+            gap: 5px;
+            margin-top: 6px;
+            flex-wrap: wrap;
+        }
+        .repo-tech span {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 8pt;
+        }
+        .github-profile {
+            text-align: center;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #e2e8f0;
+        }
+        @media print {
+            body { padding: 10mm; }
+            .print-button { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>First LAST</h1>
+        <div class="subtitle">Job Title | Specialty</div>
+        <div class="contact-info">
+            📍 City, Country | 📧 email@example.com | 📱 +1 555 000 0000 |
+            <a href="https://linkedin.com/in/your-profile">LinkedIn</a> |
+            <a href="https://github.com/your-profile">GitHub</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PROFESSIONAL PROFILE</div>
+        <p class="profile-text">
+            Describe your professional profile in a few lines. Highlight your key skills,
+            experience, and what makes you stand out. This text should make the recruiter
+            want to read the rest of your resume and meet you.
+        </p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">TECHNICAL SKILLS</div>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <span class="skill-category">Languages</span>
+                <span class="skill-list">Python, JavaScript, TypeScript, SQL</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-category">Frameworks</span>
+                <span class="skill-list">React, Node.js, Django, FastAPI</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-category">Tools</span>
+                <span class="skill-list">Git, Docker, Kubernetes, CI/CD</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-category">Cloud</span>
+                <span class="skill-list">AWS, GCP, Azure</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PROFESSIONAL CERTIFICATIONS</div>
+        <ul class="cert-list">
+            <li>✓ Certification Example 1 (2024)</li>
+            <li>✓ Certification Example 2 (2023)</li>
+            <li>✓ Certification Example 3 (2022)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PROFESSIONAL EXPERIENCE</div>
+
+        <div class="experience-item">
+            <div class="job-title">Senior Job Title</div>
+            <div class="company-name">Company Name</div>
+            <div class="date-range">January 2022 - Present | City, Country</div>
+            <ul class="responsibilities">
+                <li>Major achievement or responsibility #1 with quantifiable results</li>
+                <li>Major achievement or responsibility #2 with business impact</li>
+                <li>Technical leadership and team mentoring</li>
+            </ul>
+            <div class="tech-stack">Stack: Python, React, PostgreSQL, AWS, Docker</div>
+        </div>
+
+        <div class="experience-item">
+            <div class="job-title">Job Title</div>
+            <div class="company-name">Other Company</div>
+            <div class="date-range">March 2019 - December 2021 | City, Country</div>
+            <ul class="responsibilities">
+                <li>Description of your responsibilities and accomplishments</li>
+                <li>Important projects completed with technologies used</li>
+                <li>Collaboration with cross-functional teams</li>
+            </ul>
+            <div class="tech-stack">Stack: JavaScript, Node.js, MongoDB, GCP</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">EDUCATION</div>
+
+        <div class="education-item">
+            <div class="job-title">Degree / Certification Title</div>
+            <div class="company-name">School or University Name</div>
+            <div class="date-range">2015 - 2019 | City, Country</div>
+        </div>
+
+        <div class="education-item">
+            <div class="job-title">Other Degree or Certification</div>
+            <div class="company-name">Institution</div>
+            <div class="date-range">2013 - 2015</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">GITHUB PROJECTS</div>
+        <div class="projects-list">
+            <div class="github-repos">
+                <div class="repo-card">
+                    <a href="https://github.com/user/project-1">📦 example-project-1</a>
+                    <div class="repo-description">Short description of the project and its purpose</div>
+                    <div class="repo-tech">
+                        <span>Python</span>
+                        <span>Docker</span>
+                        <span>AWS</span>
+                    </div>
+                </div>
+                <div class="repo-card">
+                    <a href="https://github.com/user/project-2">📦 example-project-2</a>
+                    <div class="repo-description">Another project with detailed description</div>
+                    <div class="repo-tech">
+                        <span>TypeScript</span>
+                        <span>React</span>
+                    </div>
+                </div>
+                <div class="repo-card">
+                    <a href="https://github.com/user/project-3">📦 example-project-3</a>
+                    <div class="repo-description">CLI tool for DevOps automation tasks</div>
+                    <div class="repo-tech">
+                        <span>Go</span>
+                        <span>Terraform</span>
+                    </div>
+                </div>
+                <div class="repo-card">
+                    <a href="https://github.com/user/project-4">📦 example-project-4</a>
+                    <div class="repo-description">REST API with OpenAPI documentation</div>
+                    <div class="repo-tech">
+                        <span>FastAPI</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="github-profile">
+                🔗 Full portfolio: <a href="https://github.com/your-profile">github.com/your-profile</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
