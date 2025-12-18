@@ -194,6 +194,15 @@ Le fichier DOCX généré est optimisé pour les systèmes ATS :
 - Pas d'images bloquant l'extraction de texte
 - Mise en forme compatible avec les parseurs automatiques
 
+### Analyse ATS de votre CV
+
+Un prompt d'analyse ATS est disponible dans [`docs/ats-analysis-prompt.md`](docs/ats-analysis-prompt.md). Utilisez-le avec un LLM (ChatGPT, Claude, etc.) pour :
+
+- Obtenir un score de compatibilité ATS
+- Identifier les mots-clés manquants
+- Detecter les risques de filtrage
+- Recevoir des recommandations d'amelioration
+
 ## Licence
 
 MIT License - Voir le fichier [LICENSE](LICENSE) pour plus de détails.
