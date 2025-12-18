@@ -1,5 +1,6 @@
 # Common
 .DS_Store
+.claude/
 Thumbs.db
 *.log
 *.tmp
@@ -42,3 +43,13 @@ htmlcov/
 *.tfstate.*
 *.tfvars.backup
 .terraform.lock.hcl
+
+# CV Converter - Fichiers générés
+output/
+
+# CV personnalisés (garder les templates de base)
+files/cv_*.html
+!files/cv_fr.html
+!files/cv_en.html
+!files/cv_fr_design.html
+!files/cv_en_design.html
