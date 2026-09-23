@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Resume - First Last</title>
+  <style>
+    :root{--navy:#15324a;--teal:#0b7a75;--pale:#eaf4f3;--muted:#66727a;--line:#cbd6da}
+    *{box-sizing:border-box}body{margin:0;font:15px/1.45 Arial,sans-serif;color:#1d252c;background:#eef2f3}
+    main{width:210mm;min-height:297mm;margin:16px auto;padding:18mm;background:#fff;border-top:5mm solid var(--teal)}
+    header{display:flex;justify-content:space-between;gap:24px}h1{margin:0;color:var(--navy);font-size:36px}h2{color:var(--navy);font-size:17px;border-bottom:1px solid var(--line);text-transform:uppercase}h3{color:var(--teal);margin-bottom:2px}.role{color:var(--teal);font-size:18px}.contact{text-align:right;color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:34% 66%;gap:14px}.side{background:var(--pale);padding:12px}.main{padding:0 8px}ul{padding-left:18px}.job{margin-bottom:14px}.meta{color:var(--muted);font-size:13px}.stack{color:var(--muted);font-size:12.5px;font-style:italic;margin-top:4px}.detailed{margin-top:28px}
+    @media screen and (max-width:850px){main{width:auto;margin:0;padding:24px}.grid{grid-template-columns:1fr}header{display:block}.contact{text-align:left}}
+    @media print{body{background:#fff}main{margin:0;box-shadow:none}}
+  </style>
+</head>
+<body><main>
+  <header><div><h1>First Last</h1><div class="role">Job title · Specialism</div></div><div class="contact">+33 6 00 00 00 00 · first.last@example.com<br>City, Country<br>example.com · github.com/account</div></header>
+  <p><b>Job title.</b> A three or four sentence summary: years of experience, notable contexts, areas of specialism, certifications, and what you bring today. This is the first block a recruiter and an ATS both read — put your main keywords here.</p>
+  <div class="grid"><aside class="side">
+    <h2>Expertise</h2><ul><li>First area of expertise</li><li>Second area of expertise</li><li>Third area of expertise</li><li>Fourth area of expertise</li><li>Fifth area of expertise</li></ul>
+    <h2>Skills</h2><p><b>First group:</b> Tech A, Tech B, Tech C, Tech D</p><p><b>Second group:</b> Tech E, Tech F, Tech G</p><p><b>Third group:</b> Tech H, Tech I</p><p><b>Fourth group:</b> Tech J, Tech K</p>
+    <h2>Languages</h2><p>French · native<br>English · B2 fluent</p>
+    <h2>Certifications</h2><p>Certification A · 2025<br>Certification B · 2024<br>Certification C · 2023</p>
+  </aside><section class="main">
+    <h2>Experience</h2>
+    <div class="job"><h3>Company or client · via Employer</h3><b>Job title</b><div class="meta">Mar. 2023 - Jul. 2025 · 2 years 5 months</div><p>One summary sentence about the assignment and the outcome.</p></div>
+    <div class="job"><h3>Previous company</h3><b>Job title</b><div class="meta">Apr. 2019 - Oct. 2022 · 3 years 7 months</div><p>One summary sentence about the assignment and the outcome.</p></div>
+    <div class="job"><h3>Earlier company</h3><b>Job title</b><div class="meta">Dec. 2016 - Mar. 2019 · 2 years 4 months</div><p>One summary sentence about the assignment and the outcome.</p></div>
+    <div class="job"><h3>First employer</h3><b>Job title</b><div class="meta">Dec. 2012 - Nov. 2016 · 3 years 11 months</div><p>One summary sentence about the assignment and the outcome.</p></div>
+    <h2>Education</h2><p><b>Degree title</b><br><span class="meta">Institution, City · 2012</span></p>
+  </section></div>
+  <section class="detailed"><h1>Detailed experience</h1>
+    <h2>Company or client · via Employer</h2><h3>Job title · Mar. 2023 - Jul. 2025</h3><ul><li>An achievement led by an action verb, with the outcome</li><li>A second achievement, with figures where possible</li><li>A third achievement</li></ul><p class="stack">Tech A · Tech B · Tech C · Tech D</p>
+    <h2>Previous company</h2><h3>Job title · Apr. 2019 - Oct. 2022</h3><ul><li>Main achievement of the role</li><li>Second achievement</li></ul><p class="stack">Tech E · Tech F · Tech G</p>
+    <h2>Earlier company</h2><h3>Job title · Dec. 2016 - Mar. 2019</h3><ul><li>Main achievement of the role</li></ul><p class="stack">Tech H · Tech I</p>
+    <h2>First employer</h2><h3>Job title · Dec. 2012 - Nov. 2016</h3><ul><li>Main achievement of the role</li></ul><p class="stack">Tech J · Tech K</p>
+  </section>
+</main></body></html>
