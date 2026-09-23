@@ -1,5 +1,6 @@
 """Tests pour le convertisseur de CV"""
 
+import re
 from pathlib import Path
 
 import pytest
@@ -60,22 +61,57 @@ class TestLanguageDetection:
         assert converter.language == "fr"
 
 
-class TestOutputSuffix:
-    """Tests pour le suffixe de sortie"""
+class TestOutputPath:
+    """Tests pour le chemin de sortie (normalisation kebab-case)"""
 
     def test_french_suffix(self, tmp_path):
-        """Suffixe _FR pour le français"""
+        """Suffixe -FR pour le français"""
         html_file = tmp_path / "cv_fr.html"
         html_file.write_text("<html><body></body></html>")
         converter = CVConverter(html_file)
-        assert converter._get_output_suffix() == "_FR"
+        assert converter._build_output_path("pdf").stem == "cv-FR"
 
     def test_english_suffix(self, tmp_path):
-        """Suffixe _EN pour l'anglais"""
+        """Suffixe -EN pour l'anglais"""
         html_file = tmp_path / "cv_en.html"
         html_file.write_text("<html><body></body></html>")
         converter = CVConverter(html_file)
-        assert converter._get_output_suffix() == "_EN"
+        assert converter._build_output_path("pdf").stem == "cv-EN"
+
+    def test_dash_separator_preserved(self, tmp_path):
+        """Nom avec tirets reste avec tirets"""
+        html_file = tmp_path / "cv-xavier-gueret-fr.html"
+        html_file.write_text("<html><body></body></html>")
+        converter = CVConverter(html_file)
+        assert converter._build_output_path("pdf").stem == "cv-xavier-gueret-FR"
+
+    def test_underscores_normalized_to_dashes(self, tmp_path):
+        """Les underscores sont convertis en tirets"""
+        html_file = tmp_path / "cv_xavier_gueret_fr.html"
+        html_file.write_text("<html><body></body></html>")
+        converter = CVConverter(html_file)
+        assert converter._build_output_path("pdf").stem == "cv-xavier-gueret-FR"
+
+    def test_mixed_separators_normalized(self, tmp_path):
+        """Nom mixte (- et _) normalisé en tirets uniquement"""
+        html_file = tmp_path / "cv-xavier_gueret-fr.html"
+        html_file.write_text("<html><body></body></html>")
+        converter = CVConverter(html_file)
+        assert converter._build_output_path("pdf").stem == "cv-xavier-gueret-FR"
+
+    def test_spaces_normalized_to_dashes(self, tmp_path):
+        """Les espaces sont convertis en tirets"""
+        html_file = tmp_path / "cv xavier gueret en.html"
+        html_file.write_text("<html><body></body></html>")
+        converter = CVConverter(html_file)
+        assert converter._build_output_path("pdf").stem == "cv-xavier-gueret-EN"
+
+    def test_no_language_suffix_in_filename(self, tmp_path):
+        """Stem sans suffixe langue : le suffixe est ajouté via la détection HTML"""
+        html_file = tmp_path / "mon_cv.html"
+        html_file.write_text('<html lang="en"><body></body></html>')
+        converter = CVConverter(html_file)
+        assert converter._build_output_path("pdf").stem == "mon-cv-EN"
 
 
 class TestFileNotFound:
@@ -96,3 +132,36 @@ class TestFindDefaultCV:
 
         monkeypatch.setattr(cv_converter, "DEFAULT_FILES_DIR", Path("/nonexistent"))
         assert find_default_cv() is None
+
+
+class TestTemplatePrintFidelity:
+    """Tests garantissant que les templates rendent à l'identique en PDF"""
+
+    TEMPLATES_DIR = Path(__file__).parent.parent / "files"
+
+    @staticmethod
+    def _templates():
+        """Retourne les templates HTML livrés avec le projet"""
+        return sorted(TestTemplatePrintFidelity.TEMPLATES_DIR.glob("*.html"))
+
+    def test_templates_exist(self):
+        """Le projet livre au moins un template"""
+        assert self._templates()
+
+    def test_width_breakpoints_are_scoped_to_screen(self):
+        """Chromium compose le PDF à la largeur du papier (A4 = 794px CSS).
+
+        Une media query `max-width` non restreinte à `screen` s'applique donc
+        aussi à l'impression et fait s'effondrer la mise en page du modèle.
+        """
+        offenders = []
+        for template in self._templates():
+            css = template.read_text(encoding="utf-8")
+            for query in re.findall(r"@media([^{]+)\{", css):
+                if "max-width" in query and "screen" not in query:
+                    offenders.append(f"{template.name}: @media{query.strip()}")
+
+        assert not offenders, (
+            "media query `max-width` non restreinte à `screen` — "
+            f"elle s'appliquera au PDF: {offenders}"
+        )

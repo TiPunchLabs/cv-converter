@@ -45,11 +45,6 @@ jobs:
       - name: Set up Python
         run: uv python install 3.12
 
-      - name: Install system dependencies (WeasyPrint)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0
-
       - name: Install dependencies
         run: uv sync --dev
 
