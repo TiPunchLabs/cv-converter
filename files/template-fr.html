@@ -8,13 +8,13 @@
     :root{--navy:#15324a;--teal:#0b7a75;--pale:#eaf4f3;--muted:#66727a;--line:#cbd6da}
     *{box-sizing:border-box}body{margin:0;font:15px/1.45 Arial,sans-serif;color:#1d252c;background:#eef2f3}
     main{width:210mm;min-height:297mm;margin:16px auto;padding:18mm;background:#fff;border-top:5mm solid var(--teal)}
-    header{display:flex;justify-content:space-between;gap:24px}h1{margin:0;color:var(--navy);font-size:36px}h2{color:var(--navy);font-size:17px;border-bottom:1px solid var(--line);text-transform:uppercase}h3{color:var(--teal);margin-bottom:2px}.role{color:var(--teal);font-size:18px}.contact{text-align:right;color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:34% 66%;gap:14px}.side{background:var(--pale);padding:12px}.main{padding:0 8px}ul{padding-left:18px}.job{margin-bottom:14px}.meta{color:var(--muted);font-size:13px}.stack{color:var(--muted);font-size:12.5px;font-style:italic;margin-top:4px}.detailed{margin-top:28px}
+    header{display:flex;justify-content:space-between;gap:24px}h1{margin:0;color:var(--navy);font-size:36px}h2{color:var(--navy);font-size:17px;border-bottom:1px solid var(--line);text-transform:uppercase}h3{color:var(--teal);font-size:16px;margin:0 0 2px}.company{font-weight:bold}.via{color:var(--muted);font-weight:normal}.recall{color:var(--muted);font-size:13px;margin:0 0 6px}.detailed .job{margin-bottom:16px}.role{color:var(--teal);font-size:18px}.contact{text-align:right;color:var(--muted);font-size:13px}.contact a{color:inherit;text-decoration:none}.grid{display:grid;grid-template-columns:34% 66%;gap:14px}.side{background:var(--pale);padding:12px}.main{padding:0 8px}ul{padding-left:18px}.job{margin-bottom:14px}.meta{color:var(--muted);font-size:13px}.stack{color:var(--muted);font-size:12.5px;font-style:italic;margin-top:4px}.detailed{margin-top:28px}
     @media screen and (max-width:850px){main{width:auto;margin:0;padding:24px}.grid{grid-template-columns:1fr}header{display:block}.contact{text-align:left}}
     @media print{body{background:#fff}main{margin:0;box-shadow:none}}
   </style>
 </head>
 <body><main>
-  <header><div><h1>Prénom Nom</h1><div class="role">Intitulé de poste · Spécialité</div></div><div class="contact">+33 6 00 00 00 00 · prenom.nom@example.com<br>Ville, Pays<br>exemple.com · github.com/compte</div></header>
+  <header><div><h1>Prénom Nom</h1><div class="role">Intitulé de poste · Spécialité</div></div><div class="contact"><a href="tel:+33600000000">+33 6 00 00 00 00</a> · <a href="mailto:prenom.nom@example.com">prenom.nom@example.com</a><br>Ville, Pays<br><a href="https://exemple.com">exemple.com</a><br><a href="https://github.com/compte">github.com/compte</a></div></header>
   <p><b>Intitulé de poste.</b> Résumé en trois ou quatre phrases : nombre d'années d'expérience, contextes marquants, domaines de spécialité, certifications, et ce que vous apportez aujourd'hui. C'est le premier bloc lu par un recruteur comme par un ATS — placez-y vos mots-clés principaux.</p>
   <div class="grid"><aside class="side">
     <h2>Expertise</h2><ul><li>Premier domaine d'expertise</li><li>Deuxième domaine d'expertise</li><li>Troisième domaine d'expertise</li><li>Quatrième domaine d'expertise</li><li>Cinquième domaine d'expertise</li></ul>
@@ -23,16 +23,16 @@
     <h2>Certifications</h2><p>Certification A · 2025<br>Certification B · 2024<br>Certification C · 2023</p>
   </aside><section class="main">
     <h2>Expérience</h2>
-    <div class="job"><h3>Entreprise ou client · via Employeur</h3><b>Intitulé de poste</b><div class="meta">Mars 2023 - Juil. 2025 · 2 ans et 5 mois</div><p>Une phrase de synthèse sur la mission et le résultat obtenu.</p></div>
-    <div class="job"><h3>Entreprise précédente</h3><b>Intitulé de poste</b><div class="meta">Avr. 2019 - Oct. 2022 · 3 ans et 7 mois</div><p>Une phrase de synthèse sur la mission et le résultat obtenu.</p></div>
-    <div class="job"><h3>Entreprise plus ancienne</h3><b>Intitulé de poste</b><div class="meta">Déc. 2016 - Mars 2019 · 2 ans et 4 mois</div><p>Une phrase de synthèse sur la mission et le résultat obtenu.</p></div>
-    <div class="job"><h3>Premier employeur</h3><b>Intitulé de poste</b><div class="meta">Déc. 2012 - Nov. 2016 · 3 ans et 11 mois</div><p>Une phrase de synthèse sur la mission et le résultat obtenu.</p></div>
-    <h2>Formation</h2><p><b>Intitulé du diplôme</b><br><span class="meta">Établissement, Ville · 2012</span></p>
+    <div class="job"><h3>Intitulé de poste</h3><div class="company">Employeur <span class="via">— mission Client (équipe)</span></div><div class="meta">Mars 2023 - Juil. 2025 · 2 ans et 5 mois</div><p>Une phrase de synthèse sur la mission et le résultat obtenu.</p></div>
+    <div class="job"><h3>Intitulé de poste</h3><div class="company">Employeur précédent</div><div class="meta">Avr. 2019 - Oct. 2022 · 3 ans et 7 mois</div><p>Une phrase de synthèse sur la mission et le résultat obtenu.</p></div>
+    <div class="job"><h3>Intitulé de poste</h3><div class="company">Employeur plus ancien</div><div class="meta">Déc. 2016 - Mars 2019 · 2 ans et 4 mois</div><p>Une phrase de synthèse sur la mission et le résultat obtenu.</p></div>
+    <div class="job"><h3>Intitulé de poste</h3><div class="company">Premier employeur</div><div class="meta">Déc. 2012 - Nov. 2016 · 3 ans et 11 mois</div><p>Une phrase de synthèse sur la mission et le résultat obtenu.</p></div>
+    <h2>Formation</h2><div class="job"><h3>Intitulé du diplôme</h3><div class="company">Établissement, Ville</div><div class="meta">2012</div></div>
   </section></div>
-  <section class="detailed"><h1>Expériences détaillées</h1>
-    <h2>Entreprise ou client · via Employeur</h2><h3>Intitulé de poste · Mars 2023 - Juil. 2025</h3><ul><li>Réalisation décrite par un verbe d'action au participe passé, avec le résultat</li><li>Deuxième réalisation, chiffrée si possible</li><li>Troisième réalisation</li></ul><p class="stack">Techno A · Techno B · Techno C · Techno D</p>
-    <h2>Entreprise précédente</h2><h3>Intitulé de poste · Avr. 2019 - Oct. 2022</h3><ul><li>Réalisation principale du poste</li><li>Deuxième réalisation</li></ul><p class="stack">Techno E · Techno F · Techno G</p>
-    <h2>Entreprise plus ancienne</h2><h3>Intitulé de poste · Déc. 2016 - Mars 2019</h3><ul><li>Réalisation principale du poste</li></ul><p class="stack">Techno H · Techno I</p>
-    <h2>Premier employeur</h2><h3>Intitulé de poste · Déc. 2012 - Nov. 2016</h3><ul><li>Réalisation principale du poste</li></ul><p class="stack">Techno J · Techno K</p>
+  <section class="detailed"><h2>Expériences détaillées</h2>
+    <div class="job"><h3>Intitulé de poste</h3><p class="recall">Employeur — mission Client (équipe) · 2023-2025</p><ul><li>Réalisation décrite par un verbe d'action au participe passé, avec le résultat</li><li>Deuxième réalisation, chiffrée si possible</li><li>Troisième réalisation</li></ul><p class="stack">Techno A · Techno B · Techno C · Techno D</p></div>
+    <div class="job"><h3>Intitulé de poste</h3><p class="recall">Employeur précédent · 2019-2022</p><ul><li>Réalisation principale du poste</li><li>Deuxième réalisation</li></ul><p class="stack">Techno E · Techno F · Techno G</p></div>
+    <div class="job"><h3>Intitulé de poste</h3><p class="recall">Employeur plus ancien · 2016-2019</p><ul><li>Réalisation principale du poste</li></ul><p class="stack">Techno H · Techno I</p></div>
+    <div class="job"><h3>Intitulé de poste</h3><p class="recall">Premier employeur · 2012-2016</p><ul><li>Réalisation principale du poste</li></ul><p class="stack">Techno J · Techno K</p></div>
   </section>
 </main></body></html>
