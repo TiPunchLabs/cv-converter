@@ -68,6 +68,28 @@ files/
 |----------|-------------|
 | `template-fr.html` / `template-en.html` | Deux colonnes avec sidebar, section « expériences détaillées », optimisé ATS |
 
+#### Structure d'une expérience
+
+Chaque poste expose trois champs distincts, pour qu'un ATS puisse les isoler
+séparément — le titre du poste porte le niveau de titre, l'employeur et les dates
+ont chacun leur propre élément :
+
+```html
+<div class="job">
+  <h3>Intitulé de poste</h3>
+  <div class="company">Employeur <span class="via">— mission Client (équipe)</span></div>
+  <div class="meta">Mars 2023 - Juil. 2025 · 2 ans et 5 mois</div>
+  <p>Une phrase de synthèse sur la mission et le résultat obtenu.</p>
+</div>
+```
+
+Dans « Expériences détaillées », le même poste est repris avec un rappel en texte
+simple (`<p class="recall">`) plutôt qu'un champ de dates : une seule entrée datée
+par poste, pour éviter qu'un ATS ne compte l'expérience deux fois.
+
+Le document ne contient qu'un seul `<h1>`, votre nom. Toutes les sections sont des
+`<h2>`, tous les postes et diplômes des `<h3>`.
+
 Copiez un template sous un autre nom, puis remplissez-le avec vos informations :
 
 ```bash
